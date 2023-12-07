@@ -3,11 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>JAVA SCRIPT</title>
 </head>
 <body>
-    
+    <h1>tienda surfeando ando</h1>
+    <input id="BuscarProducto" type="text">
+    <button id="filtrar">buscar</button>
+    <main class="form-pag">
+        <form id="miFormulario" data-aos="zoom-in">
+            <h1 class="form-title">Ingresa tus datos!</h1>
+            <div class="form-container">
+                <div class="form-group">
+                    <input type="text" id="nameForm" class="form-input" placeholder= "  " >
+                    <label for="nameForm" class="form-label">nombre</label>
+                    <span class="form-line"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="userForm" class="form-input" placeholder= "  " >
+                    <label for="userForm" class="form-label">usuario</label>
+                    <span class="form-line"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="emailForm" class="form-input" placeholder= "  " >
+                    <label for="emailForm" class="form-label">email</label>
+                    <span class="form-line"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="passwordForm" class="form-input" placeholder= "  " >
+                    <label for="passwordForm" class="form-label">contraseña</label>
+                    <span class="form-line"></span>
+                </div>
+                <button id="sendData">enviar datos</button>
+                <a href="./carrito.html" >ir al carrito</a>
+                <p id="datosGuardadosBien"></p>
+            </div>
+        </form>
+    </main>
+
+
+
+
 
     <script src="/javascript/main.js"></script>
 </body>
