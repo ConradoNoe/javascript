@@ -8,24 +8,36 @@ const inputPasswordForm = document.getElementById("passwordForm")
 const inputButtonForm = document.getElementById("sendData")
 const DatosTerminados = document.getElementById("datosGuardadosBien")
 
+// recupero los datos al cargar la página
+window.onload = function() {
+    const datosGuardados = localStorage.getItem("DatosDelForm");
+    if (datosGuardados) {
+        const datos = JSON.parse(datosGuardados);
+        DatosTerminados.innerHTML = "Bienvenido " + datos.nombre + ". Tus datos han sido guardados anteriormente.";
+    }
+}
 
-inputButtonForm.addEventListener("click", function(){
+inputButtonForm.addEventListener("click", function(event){
+    event.preventDefault();
+    
     let DatosDelForm = {
         nombre: inputNameForm.value,
         usuario: inputUserForm.value,
         email: inputEmailForm.value,
         contrasenia: inputPasswordForm.value,
     }
+
     if (Object.values(DatosDelForm).some(value => !value.trim())) {
         alert("Por favor, complete todos los campos correctamente");
         return;
-    }else{
-        alert("los datos han sido guardados correctamente")
+    } else {
+        alert("Los datos han sido guardados correctamente");
     }
-    DatosTerminados.innerHTML = "bienvenido " + DatosDelForm.nombre + "tus datos han sido guardados correctamente" 
-    let resultado = JSON.stringify(DatosDelForm)          
-    localStorage.setItem("DatosDelForm", resultado)  
-})
+
+    DatosTerminados.innerHTML = "Bienvenido " + DatosDelForm.nombre + ". Tus datos han sido guardados correctamente";
+    let resultado = JSON.stringify(DatosDelForm);
+    localStorage.setItem("DatosDelForm", resultado);
+});
 
 // creo productos
 const Producto = function(tipo, marca, tamanio, precio) {
@@ -53,7 +65,6 @@ for (const producto of lista) {
         <p class="ProductoMarca">${producto.marca}</p>
         <p class="ProductoPrecio">${producto.precio} usd</p>
         <button class="ProductoBotton"> agregar al carrito </button><br>
-
     `;
     document.body.appendChild(contenedor);
 }
@@ -62,8 +73,10 @@ const guardarlocal = (clave, valor) => {localStorage.setItem(clave,valor)}
 for (const x of lista) {
     guardarlocal(x.tipo, JSON.stringify(x));
 }
-
 guardarlocal("listaproductos",JSON.stringify(lista))
+
+
+
 // para filtrar productos
 function BuscarProducto () {
     const body = document.querySelector("body")
