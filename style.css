@@ -1,31 +1,88 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+    font-size: 22px;
+    list-style: none;
+
+}
+
 h1{
-    color: black;
-    font-size: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 80px;
     text-align: center;
 }
 
 body{
-    background-color: rgb(83, 83, 172);
-    
+    background-color: rgb(3, 79, 123);
+}
+
+.form-pag{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    margin: 0;
     
 }
-.contenedorProducto{
-    
-    width: 200px;
-    background-color: rgb(50, 127, 251);
+#miFormulario{
+    width: 300px;
+    background-color: rgb(77, 179, 165);
     text-align: center;
-
 }
-
-.ProductoTipo{
-    font-size: 25px;    
-
-}
-.ProductoPrecio{
+.form-title{
+    font-size: 30px;
+    color: rgb(0, 0, 0);
     
 }
 
-.ProductoBotton{
-    padding: 10px;
-    
+.form-input{
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
 }
+
+.shop-content{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 black;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+    padding: 80px;
+}
+.card > img{
+    width: 100%;
+    height: 250px;
+}
+.price{
+    color: grey;
+    font-size: 22px;
+}
+.card button{
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover{
+    opacity: 0.7;
+}
+
+
